@@ -1,0 +1,15 @@
+# Version of docker-compose we are using
+version: '3'
+
+# services - Type of Container
+services:
+  redis-server:
+    image: redis
+
+  node-app:
+    restart: always
+    build: .
+    ports:
+      # 9000 - Port on Local Machine
+      # 8081 - Port inside Container
+      - '9000:8081'
