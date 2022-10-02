@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    web:
+      # build: . # if Dockerfile but we have Dockerfile.dev
+      build: # build an image based on that
+        context: . # Look into the current directory
+        dockerfile: Dockerfile.dev # Look for the file
+      ports:
+        - "3000:3000"
+      volumes:
+      - /app/node_modules
+      - .:/app
